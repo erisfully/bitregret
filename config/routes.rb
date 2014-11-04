@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'calculators#index'
+  root 'exchange_rates#index'
+
 end

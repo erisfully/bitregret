@@ -1,0 +1,7 @@
+<%= form_tag("/", method: 'get') do %>
+  <!--insert date picker here-->
+<%= text_field_tag(:amount) %>
+<%= submit_tag "submit" %>
+<% end %>
+
+<%= @exchange_rates %>
