@@ -1,7 +1,13 @@
 <%= form_tag("/", method: 'get') do %>
-  <!--insert date picker here-->
-<%= text_field_tag(:amount) %>
-<%= submit_tag "submit" %>
+  <div><%= label_tag "Date:" %>
+  </div>
+  <div><%= select_date Date.today, prefix: :start_date %>
+  </div>
+  <div> <%= label_tag "Amount in dollars:" %>
+  </div>
+  <div><%= number_field_tag(:amount) %>
+  </div>
+  <%= submit_tag "submit" %>
 <% end %>
 
-<%= @exchange_rates %>
+<%= @date %>
