@@ -10,4 +10,8 @@
   <%= submit_tag "submit" %>
 <% end %>
 
-<h3>You could have bought: <%= @amount %> bitcoins, which is worth: <%= @worth_today %> </h3>
+<% if @amount == nil %>
+  <h3>Please enter a day and amount!</h3>
+<% else %>
+  <h3>You could have bought: <%= @amount %> bitcoins, which is worth: <%= @worth_today %> </h3>
+<% end %>

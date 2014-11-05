@@ -9,8 +9,8 @@ class ExchangeRate < Connect
   end
 
   def self.all
-    exchange_rates = JSON.parse(get_exchange_rates)
-    exchange_rates["values"]
+      exchange_rates = JSON.parse(get_exchange_rates)
+      exchange_rates["values"]
   end
 
   def self.return_date(year, month, day)
@@ -27,7 +27,7 @@ class ExchangeRate < Connect
     todays_coordinates = all.select { |h| (unix_to_utc(h["x"])) == Date.today }
     todays_worth = todays_coordinates.first["y"]
     number_of_bitcoins = return_amount(year, month, day, amount)
-    todays_worth * number_of_bitcoins
+    (todays_worth * number_of_bitcoins).round(2)
   end
 
   private
